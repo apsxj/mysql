@@ -38,7 +38,7 @@ class Connection
         'mysql:host=' . $host . ';dbname=' . $name,
         $user,
         $pass,
-        \PDO::ERRMODE_EXCEPTION
+        array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION)
       );
 
       $errorInfo = $this->pdo->errorInfo();
